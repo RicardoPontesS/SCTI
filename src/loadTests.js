@@ -1,0 +1,19 @@
+import http from 'k6/http';
+import { sleep, check} from 'k6';
+export const options = {
+  vus: 100,
+  duration: '60s',
+};
+export default function () {
+        const url = ('http://localhost:8080/signup');
+        const payload = JSON.stringify({Name: 'Teste2', Email: 'teste2@teste.com', Password:'123'})
+        const headers = {
+                'headers':{
+                        'Content-Type':'aplication/json'
+                }
+        }
+        const res = http.post(url,payload,headers)
+        check (res, {'status should be 200':(r)=>r.status===200})
+sleep(2);
+
+}
