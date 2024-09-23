@@ -12,25 +12,31 @@
 
   </head>
   <body>
-    {{ if not .IsVerified }}
-      <div id="email-verification">
-        <button hx-post="/send-verification-email"
-                hx-trigger="click"
-                hx-target="#email_message"
-                hx-swap="innerHTML"
-                hx-indicator="#loading-indicator"
-                hx-refresh="true">
-          Verificar Email
-        </button>
-        <div id="loading-indicator" class="htmx-indicator">
-          <!-- SVG spinner code here -->
-        </div>
-        <div id="email_message"></div>
-      </div>
-    {{ end }}
-
     <nav class="header-nav">
       <h2 class="nav-title-pixel">Painel do Usuário</h2>
+      {{ if not .IsVerified }}
+        <div id="email-verification">
+          <button class="pink-pixel-button" hx-post="/send-verification-email"
+                  hx-trigger="click"
+                  hx-target="#email_message"
+                  hx-swap="innerHTML"
+                  hx-indicator="#loading-indicator"
+                  hx-refresh="true">
+            <img src="/static/assets/home/button.svg" />
+            <p>Verificar Email</p>
+          </button>
+          <div id="loading-indicator" class="loading-indicator">
+            <svg width="24" height="24" stroke="#fff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <style>.spinner_V8m1{transform-origin:center;animation:spinner_zKoa 2s linear infinite}.spinner_V8m1 circle{stroke-linecap:round;animation:spinner_YpZS 1.5s ease-in-out infinite}@keyframes spinner_zKoa{100%{transform:rotate(360deg)}}@keyframes spinner_YpZS{0%{stroke-dasharray:0 150;stroke-dashoffset:0}47.5%{stroke-dasharray:42 150;stroke-dashoffset:-16}95%,100%{stroke-dasharray:42 150;stroke-dashoffset:-59}}</style>
+              <g class="spinner_V8m1">
+                <circle cx="12" cy="12" r="9.5" fill="none" stroke-width="1"></circle>
+              </g>
+            </svg>
+            <h1>Enviando o e-mail...</h1>
+          </div>
+          <div id="email_message"></div>
+        </div>
+      {{ end }}
       <a href="/ingresso" class="pink-pixel-button">
         <img src="/static/assets/home/button.svg" />
         <p>Comprar</p>
@@ -296,7 +302,7 @@
     </div> -->
 
     <footer>
-      <!-- Footer content if needed -->
+      Copyright © 2024 SCTI - Todos os direitos reservados
     </footer>
 
     <script>

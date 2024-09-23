@@ -70,6 +70,7 @@ footer {
 }
 
 .header-nav .nav-title-pixel {
+  height: 30px;
   font-size: 1.6em;
   font-family: "Joystix";
   margin-left: 15px;
@@ -110,12 +111,10 @@ footer {
 
 #last-nav {
   width: 140px;
-  height: 80px;
 }
 
 #last-nav p {
   font-size: 1.1em;
-  top: 35%;
 }
 
 .pink-pixel-button {
@@ -130,6 +129,7 @@ footer {
 
 .pink-pixel-button img {
   width: 100%;
+  height: 50px;
   cursor: pointer;
   fill: #c8ccff;
   color: #c8ccff;
@@ -396,7 +396,7 @@ footer {
   }
 
   #last-nav p {
-    top: 40%;
+    top: 60%;
     font-size: 0.7em;
   }
 
@@ -496,7 +496,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 .activity-container .left-button {
